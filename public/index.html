@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Hiring Pipeline</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">MH</span>
+      <div>
+        <h1>Mini Hiring Pipeline</h1>
+        <p class="brand-sub">Recruiter workspace &middot; <span id="job-role">Senior Backend Engineer</span></p>
+      </div>
+    </div>
+
+    <div class="search-wrap">
+      <input
+        id="search-input"
+        type="text"
+        autocomplete="off"
+        placeholder="Ask anything… e.g. Who has been stuck in Screening for more than a week?"
+        aria-label="Search candidates"
+      />
+      <button id="search-btn" class="btn btn-primary">Search</button>
+      <button id="search-clear" class="btn btn-ghost" hidden>Clear</button>
+    </div>
+
+    <button id="add-btn" class="btn btn-accent">+ Add candidate</button>
+  </header>
+
+  <div id="examples-bar" class="examples-bar">
+    <span class="examples-label">Try:</span>
+    <div id="examples" class="examples"></div>
+  </div>
+
+  <section id="search-panel" class="search-panel" hidden>
+    <div class="search-panel-head">
+      <div>
+        <h2 id="search-title">Search results</h2>
+        <p id="search-interpretation" class="interpretation"></p>
+      </div>
+      <button id="search-close" class="btn btn-ghost" aria-label="Close search results">&times;</button>
+    </div>
+    <div id="search-results" class="search-results"></div>
+  </section>
+
+  <main class="board-wrap">
+    <div id="board" class="board" aria-live="polite"></div>
+  </main>
+
+  <!-- Candidate detail drawer -->
+  <aside id="drawer" class="drawer" hidden>
+    <div class="drawer-head">
+      <button id="drawer-close" class="btn btn-ghost" aria-label="Close">&times;</button>
+      <div id="drawer-identity"></div>
+    </div>
+    <div id="drawer-body" class="drawer-body"></div>
+  </aside>
+  <div id="scrim" class="scrim" hidden></div>
+
+  <!-- Add candidate modal -->
+  <div id="modal" class="modal" hidden>
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2>Add candidate</h2>
+        <button id="modal-close" class="btn btn-ghost" aria-label="Close">&times;</button>
+      </div>
+      <form id="add-form" class="form-grid">
+        <label>Name <span class="req">*</span>
+          <input name="name" required placeholder="e.g. Priya Sharma" />
+        </label>
+        <label>Email
+          <input name="email" type="email" placeholder="name@example.com" />
+        </label>
+        <label>Phone
+          <input name="phone" placeholder="+91 …" />
+        </label>
+        <label>Role
+          <input name="role" placeholder="Senior Backend Engineer" />
+        </label>
+        <label>Source
+          <input name="source" placeholder="Referral / LinkedIn / Careers Page" />
+        </label>
+        <label class="full">Notes
+          <textarea name="notes" rows="3" placeholder="Optional context…"></textarea>
+        </label>
+        <div id="form-error" class="form-error" hidden></div>
+        <div class="modal-actions">
+          <button type="button" id="cancel-add" class="btn btn-ghost">Cancel</button>
+          <button type="submit" class="btn btn-primary">Create candidate</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+# Dependencies (none required, but ignore if ever added)
+node_modules/
+
+# Runtime database state (regenerated via `npm run seed`)
+data/db.json
+data/*.tmp
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

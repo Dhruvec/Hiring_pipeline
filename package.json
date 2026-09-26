@@ -1,0 +1,26 @@
+{
+    "name": "mini-hiring-pipeline",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Recruiter-focused hiring pipeline with a controlled stage machine, immutable audit trail, and natural-language search.",
+    "main": "src/server.js",
+    "type": "commonjs",
+    "scripts": {
+        "start": "node src/server.js",
+        "dev": "node src/server.js",
+        "seed": "node src/seed.js",
+        "reset": "node src/seed.js --force",
+        "test": "node --test \"test/*.test.js\""
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "keywords": [
+        "hiring",
+        "pipeline",
+        "kanban",
+        "ats",
+        "search"
+    ],
+    "license": "MIT"
+}
